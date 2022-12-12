@@ -9,13 +9,6 @@ document.querySelector(".gifs").style.display = "none";
 let stat = "none";
 let index = 0;
 
-// const iconList2 = [];
-
-// for (let i = 0; i < iconList.length; i++) {
-//   iconList2[i] = iconList[i].id;
-// }
-// console.log(iconList2);
-
 function charSelect() {
   if (stat === "none") {
     stat = "block";
