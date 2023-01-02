@@ -15,9 +15,11 @@ body {
   justify-content: center;
   align-items: center;
 
-  background-image: url("./assets/fundo-de-miniatura-em-quadrinhos-vermelho-e-amarelo_530597-938.jpg");
+  background-image: url("./assets/bg/background.jpg");
   background-size: cover;
   background-position-y: -8rem;
+
+  overflow: hidden;
 }
 
 .main {
@@ -31,14 +33,8 @@ body {
   width: 250px;
 }
 
-.spaceWhite {
-  color: white;
-  height: 200px;
-}
-
 .gifs {
   display: flex;
-  margin-bottom: 0;
 }
 
 .gif {
@@ -77,16 +73,23 @@ body {
   border-image-slice: 1;
 }
 
-@media (max-width: 380px) {
+@media (max-width: 420px) {
   .chars .row {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
   }
 
+  .chars .row img {
+    width: 40px;
+    margin: 0.3rem;
+    transition: 0.2s;
+  }
+
+  .gifs {
+    display: flex;
+  }
+
   .gif {
-    margin-top: 1rem;
-    position: absolute;
-    right: -80px;
-    height: 140px;
+    height: 150px;
   }
 } ;
