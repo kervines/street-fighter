@@ -1,26 +1,32 @@
 const divChars = document.querySelector(".chars");
 const imageGif = document.querySelector(".gifs");
-const iconChar = document.querySelector(".row");
+const iconListChar = divChars.querySelector(".row"); //
+const iconChar = iconListChar.querySelectorAll(".imgChar"); //lista dos personagem na tela
 
-const iconList = iconChar.getElementsByClassName("imgChar"); //lista dos personagem na tela
-const characterList = [...Array(16).keys()]; //lista numerada de 0 - 15
+let stats = "none";
 
-document.querySelector(".gifs").style.display = "none";
-let stat = "none";
-let index = 0;
+function getChar() {
+  iconListChar.addEventListener("click", selectChar);
+}
 
-function charSelect() {
-  if (stat === "none") {
-    stat = "block";
-    document.querySelector(".gifs").style.display = stat;
-    imageGif.innerHTML = `<img class="${characterList[index]}" src="./assets/gifs/${characterList[index]}.gif" alt="" 
-    class="gif">`;
-  } else if (stat === "block") {
-    stat = "none";
-    document.querySelector(".gifs").style.display = stat;
+function selectChar(char) {
+  const charSelect = char.target.id;
+  const nameChar = char.target.alt || "Select your Fighter";
+
+  if (stats === "none") {
+    stats = "block";
+    imageGif.style.display = stats;
+    imageGif.innerHTML = `<img class='gif' src="./assets/gifs/${charSelect}.gif" alt="">
+    <h3>${nameChar}<h3>`;
+  } else if (stats === "block") {
+    imageGif.innerHTML = `<img class='gif' src="./assets/gifs/${charSelect}.gif" alt="">
+    <p class='nameChar' class='gif' >${nameChar}<p>`;
+  } else if (charSelect === "") {
+    stats === "none";
+    imageGif.style.display = stats;
   }
 }
 
-function setIndex() {}
+function selectGifId() {}
 
-divChars.addEventListener("click", charSelect);
+getChar();
