@@ -74,6 +74,12 @@ body {
 }
 
 @media (max-width: 420px) {
+  body {
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
+  }
+
   .chars .row {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
