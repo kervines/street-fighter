@@ -3,6 +3,7 @@ const imageGif = document.querySelector(".gifs");
 const iconListChar = divChars.querySelector(".row"); //
 const iconChar = iconListChar.querySelectorAll(".imgChar"); //lista dos personagem na tela
 
+imageGif.innerHTML = `<p class='nameChar' >Select your Fighter</p>`;
 let stats = "none";
 
 function getChar() {
