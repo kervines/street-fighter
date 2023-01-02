@@ -85,6 +85,10 @@ body {
     transition: 0.2s;
   }
 
+  .nameChar {
+    font-size: 1rem;
+  }
+
   .gifs {
     display: flex;
   }
