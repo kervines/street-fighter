@@ -3,8 +3,8 @@ const imageGif = document.querySelector(".gifs");
 const iconListChar = divChars.querySelector(".row"); //
 const iconChar = iconListChar.querySelectorAll(".imgChar"); //lista dos personagem na tela
 
-imageGif.innerHTML = `<p class='nameChar' >Select your Fighter</p>`;
 let stats = "none";
+imageGif.innerHTML = `<p class='nameChar' >Select your Fighter</p>`;
 
 function getChar() {
   iconListChar.addEventListener("click", selectChar);
@@ -19,10 +19,14 @@ function selectChar(char) {
     imageGif.style.display = stats;
     imageGif.innerHTML = `<img class='gif' src="./assets/gifs/${charSelect}.gif" alt="">
     <h3>${nameChar}<h3>`;
-  } else if (stats === "block") {
+  }
+  if (stats === "block") {
     imageGif.innerHTML = `<img class='gif' src="./assets/gifs/${charSelect}.gif" alt="">
     <p class='nameChar' class='gif' >${nameChar}<p>`;
-  } else if (charSelect === "") {
+  }
+
+  //resolver pendencia de clicar em qualquer lugar desabilita a imagem
+  if (charSelect.classList.contains("gif")) {
     stats === "none";
     imageGif.style.display = stats;
   }
